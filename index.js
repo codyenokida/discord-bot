@@ -1,8 +1,10 @@
+require('dotenv').config({ path: '/Users/codyenokida/Projects/discord-bot/process.env' });
+
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 // Discord Token
-const token = 'NjE5NDE3ODkyOTQ5MDY1NzM4.XXH7-A.wmxf9bOnlTamlN4989ssOiT_7vkç';
+//const token = '';
 
 const GoogleSpreadsheet = require('google-spreadsheet');
 const { promisify } = require('util');
@@ -269,4 +271,7 @@ bot.on('messageReactionAdd', (reaction, user) => {
 
 // Function Calls
 accessSpreadsheet();
+
+const token = process.env.BOT_TOKEN;
+
 bot.login(token);
